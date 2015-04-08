@@ -1,0 +1,10 @@
+# Site settings
+title: Curriculum Vitae
+email: devjoseluis@gmail.com
+description: > # Curriculum base personal. Rol: desarrollador web.
+baseurl: "" # the subpath of your site, e.g. /blog/
+twitter_username: wabisabbi
+github_username:  devjoseluis
+
+# Build settings
+markdown: kramdown
