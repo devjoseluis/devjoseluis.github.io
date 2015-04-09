@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /**
  * Reset some basic elements
  */
@@ -157,6 +158,10 @@ pre {
   letter-spacing: -1px;
   margin-bottom: 0;
   float: left; }
+  .site-title:before {
+    content: '✓';
+    position: absolute;
+    left: -20px; }
   .site-title, .site-title:visited {
     color: #424242; }
 

@@ -1,0 +1,31 @@
+{
+  "name": "Curriculum Personal",
+  "version": "1.0.0",
+  "homepage": "http://devjoseluis.github.io",
+  "authors": [
+    "devjoseluis <dev.joseluis@gmail.com>"
+  ],
+  "description": "Pagina web de curriculum vitae personal",
+  "keywords": [
+    "cv",
+    "curriculum",
+    "vitae",
+    "developer",
+    "desarrollador",
+    "web",
+    "front",
+    "end",
+    "frontend"
+  ],
+  "license": "GNU",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize.css": "~3.0.3"
+  }
+}

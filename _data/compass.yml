@@ -1,10 +1,11 @@
 ---
 require:
 - jekyll-compass
-project_path: "/home/vagrant/Code/Github/cv"
+# project_path: "/home/vagrant/Code/Github/cv"
+project_path: "/home/joseluis/vagrant/Code/Github/cv"
 http_path: "/"
 css_dir: css
-sass_dir: _compass
+sass_dir: css
 images_dir: images
 javascripts_dir: javascripts
 Encoding.default_external: utf-8

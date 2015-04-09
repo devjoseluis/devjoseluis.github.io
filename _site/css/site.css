@@ -1,0 +1,283 @@
+@charset "UTF-8";
+@import url(../components/normalize.css/normalize.css);
+/* Fonts */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400);
+@import url(http://fonts.googleapis.com/css?family=Bitter:400,700);
+/* Colors */
+/* Sizes */
+/* Media Query Breakpoint */
+/* Header Arrow Effect */
+/* Typography */
+/* line 46, ../../css/site.scss */
+h1, h2, h3 {
+  font-family: Bitter, serif;
+}
+
+/* line 49, ../../css/site.scss */
+h1 {
+  color: #333;
+  font-size: 190%;
+}
+
+/* line 53, ../../css/site.scss */
+h2 {
+  color: #707070;
+}
+
+/* line 56, ../../css/site.scss */
+ul {
+  list-style: none;
+  margin-left: -1.1em;
+}
+
+/* line 60, ../../css/site.scss */
+li {
+  margin-bottom: 10px;
+  position: relative;
+}
+/* line 63, ../../css/site.scss */
+li:before {
+  content: '✓';
+  position: absolute;
+  left: -20px;
+}
+
+/* line 69, ../../css/site.scss */
+a {
+  color: #db4747;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+/* line 72, ../../css/site.scss */
+a:hover, a:focus {
+  color: #c82727;
+}
+
+/* line 76, ../../css/site.scss */
+.clearfix, header, .info {
+  display: table;
+  content: '';
+  clear: both;
+}
+
+/* Box Model */
+/* line 83, ../../css/site.scss */
+*, *:after, *:before {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 86, ../../css/site.scss */
+body {
+  background: #CAE5E7;
+  color: #333;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+}
+
+/* line 92, ../../css/site.scss */
+.resume {
+  position: relative;
+  background: white;
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto 50px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 58em) {
+  /* line 92, ../../css/site.scss */
+  .resume {
+    width: 96%;
+  }
+}
+
+/* line 105, ../../css/site.scss */
+header {
+  position: relative;
+  background: #3b8fb8;
+  width: 100%;
+  overflow: hidden;
+  height: 90px;
+  text-shadow: 1px 2px 3px #304a63;
+}
+/* line 113, ../../css/site.scss */
+header h1 {
+  position: relative;
+  font-family: 'Bitter', serif;
+  font-size: 250%;
+  background: #28627d;
+  color: white;
+  margin: 0;
+  height: 90px;
+  padding-top: 15px;
+  padding-left: 35px;
+  padding-right: 30px;
+  float: left;
+  z-index: 2;
+}
+@media (max-width: 75em) {
+  /* line 113, ../../css/site.scss */
+  header h1 {
+    width: 100%;
+    padding-right: 5px;
+  }
+}
+@media (max-width: 36em) {
+  /* line 131, ../../css/site.scss */
+  header h1 span {
+    display: none;
+  }
+}
+/* line 135, ../../css/site.scss */
+header h1:after {
+  position: absolute;
+  content: '';
+  height: 100%;
+  border-top: 45px solid transparent;
+  border-bottom: 45px solid transparent;
+  border-left: 20px solid #28627d;
+  right: -20px;
+  top: 0;
+}
+/* line 139, ../../css/site.scss */
+header div {
+  position: relative;
+  color: white;
+  float: left;
+  padding-top: 24px;
+  padding-left: 60px;
+  padding-right: 48px;
+  height: 90px;
+}
+@media (max-width: 75em) {
+  /* line 139, ../../css/site.scss */
+  header div {
+    width: 50%;
+  }
+}
+@media (max-width: 36em) {
+  /* line 139, ../../css/site.scss */
+  header div {
+    width: 100%;
+    padding-left: 30px;
+  }
+}
+/* line 154, ../../css/site.scss */
+header div:first-of-type {
+  background: #2e779c;
+  z-index: 1;
+}
+/* line 157, ../../css/site.scss */
+header div:first-of-type:after {
+  position: absolute;
+  content: '';
+  height: 100%;
+  border-top: 45px solid transparent;
+  border-bottom: 45px solid transparent;
+  border-left: 20px solid #2e779c;
+  right: -20px;
+  top: 0;
+}
+@media (max-width: 75em) {
+  /* line 154, ../../css/site.scss */
+  header div:first-of-type {
+    padding-left: 30px;
+  }
+}
+/* line 165, ../../css/site.scss */
+header a {
+  color: white;
+  padding: 0 3px;
+  border-radius: 2px;
+  text-decoration: none;
+}
+/* line 170, ../../css/site.scss */
+header a:hover, header a:focus {
+  color: white;
+  background: #00baa6;
+}
+
+/* line 177, ../../css/site.scss */
+.info {
+  width: 100%;
+}
+
+/* line 181, ../../css/site.scss */
+section {
+  float: left;
+  width: 70%;
+  padding: 0 30px;
+}
+/* line 185, ../../css/site.scss */
+section article {
+  margin-bottom: 30px;
+}
+/* line 188, ../../css/site.scss */
+section h2 {
+  font-size: 100%;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+/* line 192, ../../css/site.scss */
+section h2 span {
+  text-transform: none;
+}
+/* line 196, ../../css/site.scss */
+section p {
+  line-height: 1.5;
+}
+/* line 199, ../../css/site.scss */
+section .education p {
+  margin-top: 3px;
+}
+@media (max-width: 58em) {
+  /* line 181, ../../css/site.scss */
+  section {
+    width: 100%;
+  }
+}
+
+/* line 206, ../../css/site.scss */
+.work .block {
+  margin-bottom: 30px;
+}
+
+/* line 210, ../../css/site.scss */
+aside {
+  float: left;
+  background: whitesmoke;
+  border-left: 1px solid #ccc;
+  width: 30%;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+/* line 217, ../../css/site.scss */
+aside article {
+  margin-bottom: 50px;
+}
+/* line 220, ../../css/site.scss */
+aside h1 {
+  font-size: 150%;
+  margin-top: 29px;
+}
+/* line 224, ../../css/site.scss */
+aside a {
+  color: #333;
+  text-decoration: none;
+  border-bottom: 1px dashed gainsboro;
+}
+/* line 228, ../../css/site.scss */
+aside a:hover, aside a:focus {
+  background: #e8e8e8;
+}
+@media (max-width: 58em) {
+  /* line 210, ../../css/site.scss */
+  aside {
+    width: 100%;
+    border-left: none;
+    border-top: 1px solid #ccc;
+  }
+}
