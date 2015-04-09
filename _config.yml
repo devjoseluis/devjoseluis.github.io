@@ -8,3 +8,6 @@ github_username:  devjoseluis
 
 # Build settings
 markdown: kramdown
+# Required Gems
+gems:
+- jekyll-compass
