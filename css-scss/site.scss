@@ -102,7 +102,7 @@ body {
     width: 96%;  
   }
 }
-header {
+#header {
   @extend .clearfix;
   position: relative;
   background: $level3;
@@ -110,7 +110,7 @@ header {
   overflow: hidden;
   height: $header-height;
   text-shadow: 1px 2px 3px darken(#517EA8, 20%);
-  h1 {
+  .name-image {
     position: relative;
     font-family: 'Bitter', serif;
     font-size: 250%;
@@ -131,6 +131,11 @@ header {
       span {
         display: none; 
       }      
+    }
+    img{
+      width: 100px;
+      height: 100px;
+      @include border-radius(50%);
     }
     &:after {
       @include arrow($level1);

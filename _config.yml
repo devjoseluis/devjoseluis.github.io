@@ -6,8 +6,10 @@ baseurl: "" # the subpath of your site, e.g. /blog/
 twitter_username: wabisabbi
 github_username:  devjoseluis
 
+# Exclude these folders
+exclude: ["/css-scss", "/js-source", "/node_modules","LICENSE", "README.md", "Gruntfile.js", "bower.json", "npm-debug.log", "package.json"]
 # Build settings
 markdown: kramdown
 # Required Gems
-gems:
-- jekyll-compass
+#gems:
+#- jekyll-compass
