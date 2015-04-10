@@ -96,8 +96,8 @@ Temporary Items
 
 node_modules/
 bower_components/
-#components/*
-#!_site/components
+components/*
+!_site/components
 *.log
 
 build/
