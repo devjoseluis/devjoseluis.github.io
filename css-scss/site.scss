@@ -112,8 +112,7 @@ body {
   text-shadow: 1px 2px 3px darken(#517EA8, 20%);
   .name-image {
     position: relative;
-    font-family: 'Bitter', serif;
-    font-size: 250%;
+    
     background: $level1;
     color: white;
     margin: 0;
@@ -122,7 +121,13 @@ body {
     padding-left: $pad + 5px;
     padding-right: $pad;
     float: left;
-    z-index: 2;  
+    z-index: 2;
+    h1{
+      color: white;
+      margin: 0;
+      font-family: 'Bitter', serif;
+      font-size: 250%;
+    } 
     @include breakpoint(header-2rows) {
       width: 100%;
       padding-right: 5px;
