@@ -1,6 +1,5 @@
 @import "compass/css3";
 @import "../components/normalize.css/normalize.css";
-
 /* Fonts */
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400);
 @import url(http://fonts.googleapis.com/css?family=Bitter:400,700);
@@ -15,12 +14,12 @@ $link: #db4747;
 /* Sizes */
 $arrow-width: 20px;
 $pad: 30px;
-$header-height: 90px;
+$header-height: 150px;
 
 /* Media Query Breakpoint */
 @mixin breakpoint($point) {
   @if $point == header-2rows {
-    @media (max-width : 75em) {@content;}
+    @media (max-width : 1000em) {@content;}
   }
   @if $point == header-3rows {
     @media (max-width : 36em) {@content;}
@@ -36,7 +35,7 @@ $header-height: 90px;
   content: '';
   height: 100%;
   border-top: $header-height / 2 solid transparent;
-  border-bottom: 45px solid transparent;
+  border-bottom: 90px solid transparent;
   border-left: $arrow-width solid $color;
   right: -$arrow-width;
   top: 0;
@@ -88,7 +87,6 @@ body {
   color: #333; 
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
-  margin: 0;
 }
 .resume {
   position: relative;
@@ -115,6 +113,7 @@ header {
     position: relative;
     font-family: 'Bitter', serif;
     font-size: 250%;
+    line-height: 250%;
     background: $level1;
     color: white;
     margin: 0;
@@ -123,7 +122,22 @@ header {
     padding-left: $pad + 5px;
     padding-right: $pad;
     float: left;
-    z-index: 2;  
+    z-index: 2;
+    &:before{
+      content: '';
+      position: absolute;
+      left: calc(75% - 50px);
+      top: 50%;
+      @include translate(-50%, -50%);
+      width: 125px;
+      height: 125px;
+      border: 3px solid white;
+      @include border-radius(50%);
+      background-image: url('../assets/profile.jpeg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 25% 25%;
+    }
     @include breakpoint(header-2rows) {
       width: 100%;
       padding-right: 5px;
@@ -131,7 +145,14 @@ header {
     @include breakpoint(header-3rows) {
       span {
         display: none; 
-      }      
+      }     
+      &:before{
+          left: auto;
+          right: $pad;
+          @include translate(0, -50%);
+          width: 100px;
+          height: 100px;
+      } 
     }
     &:after {
       @include arrow($level1);
@@ -235,4 +256,7 @@ aside {
     border-left: none;
     border-top: 1px solid #ccc;
   }
+}
+.developments a{
+  display: block;
 }
