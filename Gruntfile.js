@@ -80,7 +80,16 @@ module.exports = function(grunt) {
         dest: 'js/concat/site.js'
       }
     },
-
+copy:{
+      jquerymap: {
+        src: 'components/jquery/dist/jquery.min.map',
+        dest: 'js/jquery.min.map'
+      },
+      normalize:{
+        src: 'components/normalize.css/normalize.min.css',
+        dest: 'css/normalize.min.css'
+      } 
+    },
     uglify: {
       options: {
         banner: '<%= banner %>'
@@ -150,6 +159,6 @@ cssmin: {
   grunt.loadNpmTasks('grunt-contrib-connect');
   // Default task.
   //grunt.registerTask('default', ['jshint', 'uglify:modernizr','concat', 'uglify', 'cssmin', 'compass','concat:site_css', 'watch']);
-  grunt.registerTask('default', ['modernizr','jshint', 'concat', 'uglify', 'cssmin', 'compass', 'jekyll', 'connect', 'watch']);
+  grunt.registerTask('default', ['modernizr','jshint', 'concat', 'uglify', 'cssmin', 'copy', 'compass', 'jekyll', 'connect', 'watch']);
 
 };
