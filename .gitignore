@@ -102,3 +102,17 @@ components/*
 
 build/
 dist/
+
+_includes
+_layouts
+assets
+css
+js
+js-source
+scss
+_config.yml
+.bowerrc
+bower.json
+Gruntfile.js
+index.html
+package.json
