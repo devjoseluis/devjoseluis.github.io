@@ -8,15 +8,7 @@ module.exports = function(grunt) {
       '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
       '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
       '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>; */\n',
-    // Task configuration.
-    modernizr:{
-      dist: {
-        // [REQUIRED] Path to the build you're using for development. 
-        "devFile" : "components/modernizr/modernizr.js",
-        // Path to save out the built file. 
-        "outputFile" : "js/modernizr-custom.min.js"
-      }
-    },
+    
     //Construye el sitio en _site
     jekyll: {
       dist: {
@@ -30,13 +22,13 @@ module.exports = function(grunt) {
     },
     //Levanta el server para ver lo de _site
     connect: {
-    server: {
-      options: {
-        port: 4000,
-        base: '_site'
+      server: {
+        options: {
+          port: 4000,
+          base: '_site'
+        }
       }
-    }
-  },
+    },
     jshint: {
       options: {
         curly: true,
@@ -55,7 +47,7 @@ module.exports = function(grunt) {
           jQuery: true,
           $: true,
           skrollr: true,
-          TweenLite: true
+          Trianglify: true
         }
       },
       gruntfile: {
@@ -65,31 +57,6 @@ module.exports = function(grunt) {
         src: ['js-source/**/*.js']
       }
     },
-
-    concat: {
-      options: {
-        banner: '<%= banner %>',
-        stripBanners: true
-      },
-      utils: {
-        src: ['js/modernizr-custom.min.js', 'components/jquery/dist/jquery.min.js','components/modernizr/modernizr.min.js'],
-        dest: 'js/utils.min.js'
-      },
-      home: {
-        src: ['js-source/site.js'],
-        dest: 'js/concat/site.js'
-      }
-    },
-copy:{
-      jquerymap: {
-        src: 'components/jquery/dist/jquery.min.map',
-        dest: 'js/jquery.min.map'
-      },
-      normalize:{
-        src: 'components/normalize.css/normalize.min.css',
-        dest: 'css/normalize.min.css'
-      } 
-    },
     uglify: {
       options: {
         banner: '<%= banner %>'
@@ -97,32 +64,20 @@ copy:{
       js_source: {
         files: [
       {
-        src: 'js/concat/site.js',
-        dest: 'js/site.min.js'
+        src: 'js-source/cv.js',
+        dest: 'js/cv.js'
         }]
       }
     },
-cssmin: {
-  target: {
-    files: [{
-      expand: true,
-      cwd: 'components/normalize.css/',
-      src: ['*.css', '!*.min.css'],
-      dest: 'components/normalize.css/',
-      ext: '.min.css'
-    }]
-  }
-},
     compass: {
       dist: {
         options: {
-          sassDir: 'css-scss',
+          sassDir: 'scss',
           cssDir: 'css',
           outputStyle: 'compressed'
         }
       },
     },
-
     watch: {
       gruntfile: {
         files: '<%= jshint.gruntfile.src %>',
@@ -134,7 +89,7 @@ cssmin: {
       },
       js_source: {
         files: '<%= jshint.js_source.src %>',
-        tasks: ['jshint:js_source', 'concat:utils','concat:home', 'uglify:js_source', 'jekyll']
+        tasks: ['jshint:js_source', 'uglify:js_source', 'jekyll']
       },
       css_source: {
         files: '<%= compass.dist.options.sassDir %>/**/*.scss',
@@ -145,20 +100,14 @@ cssmin: {
 
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-concat');
-  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-cssmin');
-  //Build a custom modernizr file, with Modernizr.load
-  grunt.loadNpmTasks("grunt-modernizr");
   //Jekyll
   grunt.loadNpmTasks('grunt-jekyll');
   //Server at http://localhost:4000
   grunt.loadNpmTasks('grunt-contrib-connect');
   // Default task.
-  //grunt.registerTask('default', ['jshint', 'uglify:modernizr','concat', 'uglify', 'cssmin', 'compass','concat:site_css', 'watch']);
-  grunt.registerTask('default', ['modernizr','jshint', 'concat', 'uglify', 'cssmin', 'copy', 'compass', 'jekyll', 'connect', 'watch']);
+  grunt.registerTask('default', ['jshint',  'uglify', 'compass', 'jekyll', 'connect', 'watch']);
 
 };
